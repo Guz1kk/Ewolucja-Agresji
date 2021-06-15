@@ -12,3 +12,5 @@ cmake -G "MinGW Makefiles" ..
 make
 ```
 Binaries will be in the build/bin
+
+Documentation avaible [here](https://guz1kk.github.io/Ewolucja-Agresji/)
