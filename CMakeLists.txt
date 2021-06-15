@@ -14,6 +14,7 @@ set(PROJECT_SOURCES)
 include_directories(${PROJECT_SOURCE_DIR}/Include)
 add_subdirectory(${PROJECT_SOURCE_DIR}/Source)
 add_executable(EwolucjaAgresji "main.cpp" ${PROJECT_SOURCES})
+add_definitions("-DPROJECT_BUILD_PATH=\"${PROJECT_BINARY_DIR}\"")
 
 #UT
 add_executable(ewolucja_agresji_ut "test.cpp" ${PROJECT_SOURCES})

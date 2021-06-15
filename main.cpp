@@ -2,6 +2,8 @@
 #include <memory>
 #include <vector>
 #include <exception>
+#include <fstream>
+#include <string>
 #include "Symulacja.hpp"
 
 int main()
@@ -46,6 +48,10 @@ int main()
 			std::cerr << "\nWprowadzono za duze dane\n";
 			return 2137;
 		}
+		std::string path_to_build_catalog = PROJECT_BUILD_PATH;
+		std::ofstream csvFileWriter;
+		csvFileWriter.open(path_to_build_catalog + "/simulation.csv");
+		csvFileWriter << "Dzien,Liczba Golebi,Liczba Jastrzebi\n";
 		for (int i = 0; i < liczba_dni; i++)
 		{
 			int liczba_golebi = 0;
@@ -62,6 +68,7 @@ int main()
 			std::cout << "    Liczba golebi: " << liczba_golebi << std::endl;
 			std::cout << "    Liczba jastrzebi: " << liczba_jastrzebi << std::endl;
 			std::cout << std::endl;
+			csvFileWriter << i + 1 << "," << liczba_golebi << "," << liczba_jastrzebi << '\n';
 		}
 	}
 	catch (...)
